@@ -1,6 +1,11 @@
-const weatherApiUrl = 'http://localhost:3000/weather/';
-const wikipediaApiUrl = 'http://localhost:3000/wikipedia/';
-const geocodingApiUrl = 'http://localhost:3000/geocoding/';
+// const weatherApiUrl = 'http://localhost:3000/weather/';
+// const wikipediaApiUrl = 'http://localhost:3000/wikipedia/';
+// const geocodingApiUrl = 'http://localhost:3000/geocoding/';
+
+const weatherApiUrl = 'https://alua-weather.onrender.com/weather/';
+const wikipediaApiUrl = 'https://alua-weather.onrender.com/wikipedia/';
+const geocodingApiUrl = 'https://alua-weather.onrender.com/geocoding/';
+
 
 async function fetchGeocodingData(city) {
   try {
