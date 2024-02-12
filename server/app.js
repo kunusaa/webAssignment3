@@ -19,7 +19,7 @@ app.use(express.json());
 const PORT = config.express.PORT;
 const CLIENT_PATH = config.express.clientPath;
 
-// Set up MongoDB connection
+// Set up MongoDB connectionn 
 mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
