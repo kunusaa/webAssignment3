@@ -1,0 +1,378 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,900&display=swap");
+
+/* Global reset and default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif; /* Default font */
+}
+
+/* Body styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('../images/background.jpg') center center; /* Background image */
+  background-size: cover; /* Cover the entire viewport */
+}
+
+/* Container styles */
+.container {
+  margin-top: 10%;
+  position: relative;
+  width: 900px;
+  height: 100px;
+  background: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(30px); /* Apply blur effect to the background */
+  -webkit-backdrop-filter: blur(30px); /* Safari support */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  transition: height 2s ease; /* Transition effect */
+}
+
+/* Search box styles */
+.search-box {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+}
+
+.search-box i {
+  position: absolute;
+  left: 10px;
+  font-size: 28px;
+}
+
+.search-box input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 2);
+  outline: none;
+  border-radius: 10px;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0 48px 0 42px; /* Padding shorthand */
+}
+
+.search-box input::placeholder {
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.search-box button {
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 28px;
+  color: #fff;
+  padding: 0 40px 0 5px;
+  cursor: pointer;
+}
+
+/* Weather box styles */
+.weather-box {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Initially hidden elements */
+.weather-details,
+.weather-box,
+.not-found {
+  visibility: hidden;
+}
+
+/* Active state for visible elements */
+.weather-details.active,
+.weather-box.active,
+.not-found.active {
+  visibility: visible;
+}
+
+/* Weather box animation */
+.weather-box .box,
+.not-found .box {
+  transform: translateY(-100%);
+}
+
+.weather-box.active .box,
+.not-found.active .box {
+  transform: translateY(0%);
+  transition: transform 2s ease;
+  transition-delay: .5s;
+}
+
+.weather-box img,
+.not-found .box img {
+  overflow: auto;
+  width: 30%;
+}
+
+.weather-box .temperature {
+  position: relative;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.weather-box .temperature span {
+  position: absolute;
+  font-size: 24px;
+  margin-left: 4px;
+}
+
+.weather-box .description {
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* Weather details styles */
+.weather-details {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+}
+
+.weather-details .humidity,
+.weather-details .wind,
+.weather-details .feels,
+.weather-details .pressure,
+.weather-details .rain-volume {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.weather-details i {
+  font-size: 56px;
+  margin-right: 10px;
+}
+
+.weather-details span {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.weather-details p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Not found styles */
+.not-found {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: -58px;
+}
+
+.not-found img {
+  width: 65%;
+  margin-top: -100px;
+}
+
+.not-found p {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+/* Feels section */
+.weather-details .feels {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  width: 50%;
+}
+
+/* Country code */
+.country-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.country-code p {
+  font-size: 18px; 
+}
+
+/* Map styles */
+.mapboxgl-canvas-container {
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.map {
+  display: none;
+  padding-bottom: 100px;
+  margin-top: 800px;
+}
+
+#map {
+  height: 500px;
+  border-radius: 50px;
+}
+
+/* Wikipedia container */
+.wikipedia-container {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+}
+
+.wikipedia-info {
+  i.bx.bxl-wikipedia {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    max-height: 200px;
+    overflow: auto;
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.info-wikipedia {
+  div#wikipedia-info {
+    text-align: center;
+  }
+}
+
+/* Admin panel styles */
+.admin-panel {
+  margin: 20px;
+}
+
+.admin-panel h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.admin-panel h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.admin-panel form {
+  background-color: #ccc;
+  padding: 30px 10px 30px 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.admin-panel label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.admin-panel input[type="text"],
+.admin-panel input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.admin-panel button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.admin-panel button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed; /* Fixed position to keep it at the top */
+  top: 0; /* Align it to the top of the page */
+  left: 0; /* Align it to the left of the page */
+  width: 100%; /* Make it span the entire width */
+  background-color: #333;
+  padding: 10px 20px;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+
+#history-content {
+  margin-top: 20px;
+}
+
+.history-item {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.history-item:hover {
+  background-color: #e0e0e0;
+}
+
+.history-item p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}

@@ -1,0 +1,32 @@
+<%- include('./templates/base', {pageTitle: 'Admin Panel', content: `
+  <div class="admin-panel">
+    <form id="createUserForm">
+      <h2>Create User</h2>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Create User</button>
+    </form>
+
+    <form id="editUserForm">
+      <h2>Edit User</h2>
+      <label for="userId">User ID:</label>
+      <input type="text" id="userId" name="userId" required>
+      <label for="newUsername">New Username:</label>
+      <input type="text" id="newUsername" name="newUsername" required>
+      <label for="newPassword">New Password:</label>
+      <input type="password" id="newPassword" name="newPassword" required>
+      <button type="submit">Edit User</button>
+    </form>
+
+    <form id="deleteUserForm">
+      <h2>Delete User</h2>
+      <label for="userIdToDelete">User ID:</label>
+      <input type="text" id="userIdToDelete" name="userIdToDelete" required>
+      <button type="submit">Delete User</button>
+    </form>
+  </div>
+
+  <script src="./assets/scripts/formHandler.js"></script>
+`}) %>
